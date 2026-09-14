@@ -1,4 +1,4 @@
-# 1. Actions, o que são
+# Actions, o que são
 
 Actions são as operações específicas que podem ser permitidas ou negadas 
 numa policy — basicamente "o que pode ser feito" em um serviço.
@@ -23,15 +23,16 @@ Ou seja: a action não é sobre o comando em si (sintaxe), é sobre a
 **permissão** de executar aquela
 
 
-# Amazon Actions
+# 1. Amazon Actions
 
 - `AmazonEC2ReadOnlyAccess` Acesso a todos os recursos ec2, porém apenas para leitura 
 
 - `AmazonEC2FullAccess` Acesso completo a todos os recursos ec2
 
-# AWS Actions
+# 2. AWS Actions
 
-## Consult
+## 2.1 Consultar sobre informações
+
 `ec2:DescribeInstances` Quais máquinas eu tenho e suas informações
 
 `ec2:DescribeImages` Consulta as AMIs dipo
@@ -42,7 +43,7 @@ Ou seja: a action não é sobre o comando em si (sintaxe), é sobre a
 
 `ec2:DescribeVolumes` Consulta os volumes EBS, ou seja, os discos associados às EC2.
 
-## Control of EC2
+## 2.2 Controle do EC2
 
 `ec2:RunInstances` Cria uma nova EC2.
 
@@ -54,7 +55,7 @@ Ou seja: a action não é sobre o comando em si (sintaxe), é sobre a
 
 `ec2:TerminateInstances` Encerra uma EC2, removendo a instância.
 
-## Segurança / acesso
+## 2.3 Segurança / acesso
 `ec2:CreateSecurityGroup` Cria um novo Security Group.
 
 `ec2:DeleteSecurityGroup` Exclui um Security Group.

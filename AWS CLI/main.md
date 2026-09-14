@@ -51,14 +51,36 @@ A estrutura básica é
 
 # 5. Extras
 
-1. `aws <comand> --profile <user>` 
- -> `aws ec2 describe-instances --profile tevoshw` Para se fazer comandos em usuarios diferentes utilizados o --profile <user> na frente deles
 
-2. `aws <command> --region <region>` ->  `aws ec2 describe-instances --region sa-east-1` Para se fazer comandos em regiões diferentes utilizamos o --region
+## 5.1 Profiles 
+**1. Para se fazer comandos em usuarios diferentes utilizados o --profile <user> na frente deles**
 
-3. `aws <comando> --output <type>` -> `aws ec2 describe-instances --output table` Para se definir o output da API no terminal usamos o --output, caso não, o default que definimos no configure será o utilizado
+`aws <comand> --profile <user>` 
 
-4. `aws configure list-profiles`  Listar usuarios
+       Exemplo: aws ec2 describe-instances --profile tevoshw
 
-5. `aws configure list --profile <user>` Listar um usuario especifico
+---
 
+**2. Para listar os usuários existentas naquela máquina**
+
+`aws configure list-profiles`  
+
+---     
+
+**3. Para listar um usuario especifico**
+
+`aws configure list --profile <user>` 
+
+## 5.2 Regions
+Para se fazer comandos em regiões diferentes utilizamos o --region
+
+1. `aws <command> --region <region>` 
+
+        aws ec2 describe-instances --region sa-east-1
+
+## 5.3 Outputs
+Para se definir o output da API no terminal usamos o --output, caso não, o default que definimos no configure será o utilizado
+
+1. `aws <comando> --output <type>` 
+
+        aws ec2 describe-instances --output table

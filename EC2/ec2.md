@@ -10,38 +10,47 @@ Máquinas virtuais são basicamente computadores
 Uma EC2 possui principalmente 7 estruturas:
 
 ## 1. AMI 
+.
 ## 2. Instance type  
+.
 ## 3. Storage (EBS) 
+.
 ## 4. Security Group 
+.
 ## 5. Key pair 
+.
 ## 6. VPC/Subnet 
+.
 ## 7. Public IP
-
+.
 
 # 3. Comandos
 Todos os comandos a seguir é supondo que temos a permissão do IAM para tal
 
 **TODOS OS COMANDOS SEMPRE UTILIZARÃO `aws ec2 <comando>`**
 
-`describe-instances` Mostra as máquinas e seus tipos 
+1. `describe-instances` Mostra as máquinas e seus tipos 
 
-`run-instances` Inicia uma nova instancia
+## 3.1 Funcionamento de instâncias
 
-`start-instances` Inicia uma instancia parada
+2. `run-instances` Inicia uma nova instancia
 
-`stop-instances` Para uma instancia em execução
+3. `start-instances` Inicia uma instancia parada
 
-`reboot-instances` Reinicia uma instancia
+4. `stop-instances` Para uma instancia em execução
 
-`erminate-instances` Deleta uma instancia
+5. `reboot-instances` Reinicia uma instancia
 
+6. `terminate-instances` Deleta uma instancia
 
-`describe-images ` Consulta as AMIs diponiveis
+## 3.2 Informação sobre as instâncias
 
-`describe-instance-types` Consulta os tipos de EC2 e suas características: vCPU, RAM, rede, etc.
+1. `describe-images ` Consulta as AMIs diponiveis
 
-`describe-security-groups` Consultainformações dos Security Groups e suas regras. 
+2. `describe-instance-types` Consulta os tipos de EC2 e suas características: vCPU, RAM, rede, etc.
 
-`describe-volumes ` Consulta os volumes EBS, ou seja, os discos associados às EC2.
+3. `describe-security-groups` Consultainformações dos Security Groups e suas regras. 
+
+4. `describe-volumes ` Consulta os volumes EBS, ou seja, os discos associados às EC2.
 
 
