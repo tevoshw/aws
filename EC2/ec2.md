@@ -7,32 +7,41 @@ Máquinas virtuais são basicamente computadores
 
 # 2. Estrutura
 
-Uma EC2 possui principalmente
+Uma EC2 possui principalmente 7 estruturas:
 
-1. AMI → imagem/base do sistema operacional
-2. Instance type → CPU, RAM etc.
-3. Storage (EBS) → disco
-4. Security Group → firewall
-5. Key pair → autenticação SSH
-6. VPC/Subnet → rede
-7. Public IP → endereço público, quando configurado
+## 1. AMI 
+## 2. Instance type  
+## 3. Storage (EBS) 
+## 4. Security Group 
+## 5. Key pair 
+## 6. VPC/Subnet 
+## 7. Public IP
 
 
-# Comandos
-Todos os comandos a seguir é supondo que temos a permissão do IAM
+# 3. Comandos
+Todos os comandos a seguir é supondo que temos a permissão do IAM para tal
 
-```python
+**TODOS OS COMANDOS SEMPRE UTILIZARÃO `aws ec2 <comando>`**
 
-aws ec2 describe-instances # Mostra as máquinas e seus tipos 
-aws ec2 run-instances # Inicia uma nova instancia
-aws ec2 start-instances # Inicia uma instancia parada
-aws ec2 stop-instances # Para uma instancia em execução
-aws ec2 reboot-instances # Reinicia uma instancia
-aws ec2 terminate-instances # Deleta uma instancia
+`describe-instances` Mostra as máquinas e seus tipos 
 
-aws ec2 describe-images  # Consulta as AMIs dipo
-aws ec2 describe-instance-types # Consulta os tipos de EC2 e suas características: vCPU, RAM, rede, etc.
-aws ec2 describe-security-groups # Consulta informações dos Security Groups e suas regras. 
-aws ec2 describe-volumes  # Consulta os volumes EBS, ou seja, os discos associados às EC2.
+`run-instances` Inicia uma nova instancia
 
-```
+`start-instances` Inicia uma instancia parada
+
+`stop-instances` Para uma instancia em execução
+
+`reboot-instances` Reinicia uma instancia
+
+`erminate-instances` Deleta uma instancia
+
+
+`describe-images ` Consulta as AMIs diponiveis
+
+`describe-instance-types` Consulta os tipos de EC2 e suas características: vCPU, RAM, rede, etc.
+
+`describe-security-groups` Consultainformações dos Security Groups e suas regras. 
+
+`describe-volumes ` Consulta os volumes EBS, ou seja, os discos associados às EC2.
+
+
