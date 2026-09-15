@@ -9,20 +9,33 @@ Máquinas virtuais são basicamente computadores
 
 Uma EC2 possui principalmente 7 estruturas:
 
-## 1. AMI 
-.
-## 2. Instance type  
-.
-## 3. Storage (EBS) 
-.
-## 4. Security Group 
-.
-## 5. Key pair 
-.
-## 6. VPC/Subnet 
-.
+## 1. AMI
+Molde/template usado pra criar a instância. Define sistema operacional, 
+configurações iniciais e softwares pré-instalados.
+
+## 2. Instance type
+Define o hardware: CPU, RAM, rede e (se aplicável) GPU. 
+Formato: `família.tamanho` (ex: `t3.medium`, `p3.2xlarge`).
+
+## 3. Storage (EBS)
+Disco/volume anexado à instância. É onde fica o sistema operacional 
+(vindo da AMI) e os dados. Pode ter snapshots (backups).
+
+## 4. Security Group
+Firewall virtual da instância. Controla tráfego de entrada e saída 
+(portas, protocolos, origem/destino permitida).
+
+## 5. Key pair
+Par de chaves (pública/privada) usado pra autenticação via SSH. 
+Substitui usuário/senha no acesso direto à instância.
+
+## 6. VPC/Subnet
+Rede isolada (VPC) onde a instância mora, e o pedaço específico dela 
+(subnet) que define se tem ou não rota pra internet (pública/privada).
+
 ## 7. Public IP
-.
+Endereço que torna a instância acessível pela internet. Só existe se a 
+subnet for pública e a opção estiver ativada (dinâmico ou Elastic IP fixo).
 
 # 3. Comandos
 Todos os comandos a seguir é supondo que temos a permissão do IAM para tal

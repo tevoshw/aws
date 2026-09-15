@@ -23,7 +23,7 @@ Ou seja: a action não é sobre o comando em si (sintaxe), é sobre a
 **permissão** de executar aquela
 
 
-# 1. Amazon Actions
+# 1. AWS Policys EC2
 
 - `AmazonEC2ReadOnlyAccess` Acesso a todos os recursos ec2, porém apenas para leitura 
 
