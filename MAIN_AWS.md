@@ -1,27 +1,38 @@
-# 1. O que é AWS
+# 1. AWS Box
 
-AWS (Amazon Web Services) é a plataforma de cloud computing da Amazon, que disponibiliza infraestrutura e serviços sob demanda, com cobrança baseada 
-em uso (pay-as-you-go).
+Basicamente AWS são serviços em nuvem, porem podemos pensar como uma CAIXA grande, aonde dentro dela temos várias divisões. Na qual são
 
-Alguns serviços principais:
-
-- **EC2** — servidores virtuais (máquinas na nuvem)
-- **S3** — armazenamento de arquivos/objetos
-- **RDS** — bancos de dados relacionais gerenciados (Postgres, MySQL, etc.)
-- **Lambda** — execução de código sem gerenciar servidor (serverless)
-- **IAM** — gerenciamento de usuários, permissões e acesso
+- API dos serviços
+- VPC
 
 
-# 2. AWS via CLI
 
-A AWS possui um site (Console) para criar e utilizar seus produtos. Porém, 
-em empresas grandes, gerenciar tudo manualmente pelo site não escala bem é lento, repetitivo e propenso a erro humano.
+# 2. Diagrama
+```mermaid
+flowchart TB
+    Eu["Eu<br/>(secret key ou SSO)"] -->|API| AWS
 
-Pra resolver isso, a AWS disponibiliza uma **CLI** (Command Line Interface), 
-que permite acessar os mesmos recursos via terminal útil pra automação, 
-scripts e integração com CI/CD.
+    subgraph AWS["AWS (conta / região)"]
+        subgraph Fora["Serviços AWS - fora da VPC"]
+            S3[S3]
+            IAM[IAM]
+            SSM[SSM - control plane]
+            DDB[DynamoDB]
+            SM[Secrets Manager]
+        end
 
-Por isso trataremos AWS como o Git, assim como o Git precisa do software `git` instalado pra usar seus comandos (`git commit`, `git push`...), a AWS precisa do **AWS CLI** instalado pra usar seus comandos (`aws s3`, `aws ec2`...).
+        subgraph VPC["VPC (rede isolada)"]
+            subgraph SubA["Subnet pública (AZ a)"]
+                EC2A[EC2]
+            end
+            subgraph SubB["Subnet privada (AZ b)"]
+                RDS[RDS]
+            end
+            subgraph SubC["Subnet privada (AZ c)"]
+                EC2C[EC2]
+            end
+        end
 
-Sem o CLI instalado, os comandos `aws` simplesmente não existem no seu 
-terminal — é o programa que interpreta e executa essas instruções.
+        SSM -.->|alcança via agent| EC2A
+    end
+```
